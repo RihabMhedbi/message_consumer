@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -124,3 +124,7 @@ CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_TASK_TRACK_STARTED = True
 CELERY_IMPORTS = 'consumer_app.tasks'
+
+# environment variables
+PRODUCER_URL = os.environ.get('PRODUCER_URL', 'http://localhost:8000')
+PRODUCER_API_KEY = os.environ.get('PRODUCER_API_KEY', 'r4HTqD8J.X5z2uCc91tHakNYkUHcRadekVQREbIPC')
