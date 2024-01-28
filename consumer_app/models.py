@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class TaskResult(models.Model):
+    task_id = models.CharField(max_length=255)
+    result = models.CharField(max_length=255)
+    webhook_url = models.CharField(max_length=255)
