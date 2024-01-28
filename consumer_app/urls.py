@@ -1,6 +1,6 @@
+"""Consumer app url."""
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-
 from consumer_app import views
 from consumer_app.views import TaskResultViewSet
 

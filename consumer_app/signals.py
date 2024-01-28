@@ -1,3 +1,4 @@
+"""Consumer app signals."""
 import requests
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -8,6 +9,12 @@ from message_consumer.settings import PRODUCER_URL, PRODUCER_API_KEY
 
 @receiver([post_save], sender=TaskResult)
 def send_result_to_producer(sender, instance, **kwargs):
+    """Signal handler to send the result to the producer's
+     webhook URL after TaskResult is saved.
+
+     Args:
+         instance: TaskResult instance
+     """
     webhook_url = instance.webhook_url
     headers = {"Authorization": f"Api-Key {PRODUCER_API_KEY}"}
     if webhook_url:
