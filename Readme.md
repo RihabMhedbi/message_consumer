@@ -7,13 +7,12 @@ Before running the project, ensure you have the following installed on your syst
 - Python 3.8 or higher
 - Pip (Python package installer)
 - RabbitMQ (Message broker for Celery)
-- Git (Version control system, if cloning the project from a repository)
 
 ## Setup Instructions
 
 1. **Clone the Repository:**
    ```bash
-    cd producer_project
+    cd consumer_project
     python3 -m venv env
     source env/bin/activate
     pip install -r requirements.txt
